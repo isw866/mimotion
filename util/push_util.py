@@ -233,9 +233,9 @@ def push_to_telegram_bot(exec_results, summary, config: PushConfig):
             for exec_result in exec_results:
                 success = exec_result['success']
                 if success is not None and success is True:
-                    html += f'<pre><blockquote>账号：{exec_result["user"]}</blockquote>刷步数成功，接口返回：<b>{exec_result["msg"]}</b></pre>'
+                    html += f'<pre><blockquote>账号：{exec_result["user"][-4:]}</blockquote>成功，接口返回：<b>{exec_result["msg"]}</b></pre>'
                 else:
-                    html += f'<pre><blockquote>账号：{exec_result["user"]}</blockquote>刷步数失败，失败原因：<b>{exec_result["msg"]}</b></pre>'
+                    html += f'<pre><blockquote>账号：{exec_result["user"][-4:]}</blockquote>失败，失败原因：<b>{exec_result["msg"]}</b></pre>'
         push_telegram_bot(config.telegram_bot_token, config.telegram_chat_id, html)
     else:
         print("未配置 TELEGRAM_BOT_TOKEN 或 TELEGRAM_CHAT_ID 跳过telegram推送")
