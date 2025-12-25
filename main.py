@@ -28,9 +28,9 @@ def get_min_max_by_time(hour=None, minute=None):
     if minute is None:
         minute = time_bj.minute
     time_rate = min((hour * 60 + minute) / (22 * 60), 1)
-    min_step = get_int_value_default(config, 'MIN_STEP', 53778)
-    max_step = get_int_value_default(config, 'MAX_STEP', 70889)
-    return int(time_rate * min_step), int(time_rate * max_step)
+    min_step = get_int_value_default(config, 'MIN_STEP', 21778)
+    max_step = get_int_value_default(config, 'MAX_STEP', 29889)
+    return int(min_step), int(max_step)
 
 
 # 虚拟ip地址
