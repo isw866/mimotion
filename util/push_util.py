@@ -187,7 +187,7 @@ def push_to_push_plus(exec_results, summary, config: PushConfig):
         html = f'<div>{summary}</div>'
         if len(exec_results) >= config.push_plus_max:
             html += '<div>账号数量过多，详细情况请前往github actions中查看</div>'
-        else:
+        # else:
             # html += '<ul>'
             # for exec_result in exec_results:
             #     success = exec_result['success']
