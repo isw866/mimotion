@@ -226,7 +226,7 @@ def push_to_telegram_bot(exec_results, summary, config: PushConfig):
     # 判断是否需要telegram推送
     if (config.telegram_bot_token and config.telegram_bot_token != '' and config.telegram_bot_token != 'NO' and
             config.telegram_chat_id and config.telegram_chat_id != ''):
-        html = f'<b>{summary}</b>'
+        html = f'{summary}'
         if len(exec_results) >= config.push_plus_max:
             html += '<blockquote>账号数量过多，详细情况请前往github actions中查看</blockquote>'
         # else:
